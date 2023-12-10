@@ -1,9 +1,9 @@
 package com.example.wear.presentation
 
-
-import android.widget.Button
 import android.os.Bundle
 import android.support.wearable.activity.WearableActivity
+import android.widget.Button
+import android.widget.EditText
 import com.example.wear.R
 import com.google.android.gms.wearable.MessageClient
 import com.google.android.gms.wearable.MessageEvent
@@ -20,11 +20,18 @@ class WearActivityMain : WearableActivity(), MessageClient.OnMessageReceivedList
         setupWearCommunication()
 
         val button = findViewById<Button>(R.id.hola)
-        button.setOnClickListener {
-            sendMessageToPhone("Hola desde el reloj")
-            println("Mensaje enviado desde el reloj")
-        }
+        val editText = findViewById<EditText>(R.id.mensaje)
 
+        button.setOnClickListener {
+            try {
+                val message = editText.text.toString()
+                sendMessageToPhone(message)
+                println("Mensaje enviado desde el reloj: $message")
+            } catch (e: Exception) {
+                println("Error al enviar el mensaje: ${e.message}")
+                // Aquí puedes manejar el error según tus necesidades, por ejemplo, mostrar un Toast o loggear más detalles.
+            }
+        }
     }
 
     private fun setupWearCommunication() {
@@ -55,7 +62,6 @@ class WearActivityMain : WearableActivity(), MessageClient.OnMessageReceivedList
             }
         }
     }
-
 
     override fun onMessageReceived(messageEvent: MessageEvent) {
         if (messageEvent.path == PATH) {

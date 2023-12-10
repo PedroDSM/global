@@ -2,13 +2,13 @@ package com.example.wear.presentation
 
 import android.widget.Button
 import android.os.Bundle
-import android.support.wearable.activity.WearableActivity
+import androidx.activity.ComponentActivity
 import com.example.wear.R
 import com.google.android.gms.wearable.MessageClient
 import com.google.android.gms.wearable.MessageEvent
 import com.google.android.gms.wearable.Wearable
 
-class WearMainActivity : WearableActivity(), MessageClient.OnMessageReceivedListener {
+class WearMainActivity : ComponentActivity(), MessageClient.OnMessageReceivedListener {
 
     private val PATH = "/message-path"
 

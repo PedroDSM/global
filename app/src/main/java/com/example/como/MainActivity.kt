@@ -2,13 +2,11 @@ package com.example.como
 
 import android.os.Bundle
 import android.widget.TextView
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
-import com.example.como.R
 import com.google.android.gms.wearable.MessageClient
 import com.google.android.gms.wearable.MessageEvent
 import com.google.android.gms.wearable.Wearable
-
+import com.example.como.R
 class MainActivity : AppCompatActivity(), MessageClient.OnMessageReceivedListener {
 
     private val PATH = "/message-path"
@@ -16,7 +14,6 @@ class MainActivity : AppCompatActivity(), MessageClient.OnMessageReceivedListene
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         setupWearCommunication()
 
         // Agregar llamada al método para imprimir el ID del nodo en la consola
@@ -52,7 +49,7 @@ class MainActivity : AppCompatActivity(), MessageClient.OnMessageReceivedListene
         }
     }
 
-        // Método para imprimir el ID del nodo local en la consola
+    // Método para imprimir el ID del nodo local en la consola
     private fun printLocalNodeId() {
         Wearable.getNodeClient(this).localNode.addOnSuccessListener { localNode ->
             val localNodeId = localNode.id

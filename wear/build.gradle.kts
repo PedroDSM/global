@@ -78,7 +78,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("androidx.compose.ui:ui-tooling-preview:1.0.0")
-    implementation("com.google.android.gms:play-services-wearable:18.1.0")
 
 
 }

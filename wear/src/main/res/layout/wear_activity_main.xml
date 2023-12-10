@@ -3,16 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    tools:context=".presentation.WearActivityMain"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/mensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Ingrese algo" />
 
     <Button
         android:id="@+id/hola"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Hola Aqui Andamos">
+        android:text="Hola Aqui Andamos" />
 
-    </Button>
 </LinearLayout>
